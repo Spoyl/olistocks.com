@@ -1,6 +1,8 @@
 Personal Website
 ================
 
+No longer online whilst I develop Mechspeak.io.
+
 This is my playground on the web, and ongoing quest to develop a some useful tools. I have too many friends working in software development who dedicate their time and effort to using the latest tools and frameworks. I'm convinced that in the longrun this is a bad approach, and learning to do things without prebuilt tools allows you to develop truly novel sites.
 
 The overriding design philosophies are:
