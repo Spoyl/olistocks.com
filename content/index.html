@@ -1,0 +1,266 @@
+{% extends "../styles/templates/base.html" %}
+{% block content %} 
+<main>
+<div id="hero">
+  <center>
+    <h6>
+      Hello World.
+    </h6>
+    <p id="subtitle">
+      A handy corner of the web for practicing coding projects.
+    </p>
+    <div class="button_block">
+      <div class = "centered">      
+          <a href="#blog" class="blog_button">Blog</>
+            <a/>
+          <a href="#about" class="proj_button">About</>
+            <a/>
+      </div>
+    </div>
+  </center>
+</div>      
+<header>
+  <hr class="home-rule" id="about"/>
+        <div class="head_centered">
+          <div class="left_side">
+            <center>
+              <img id="dp" src="static/websitedp.png" alt="Profile Pic" style="width:230px;height:230px;"/>
+              <ul>
+              <li class="email_icon">
+                <a href="mailto:admin@olistocks.com"><img src="static/email_icon.svg" alt="Email icon" title="Email" style="height:32px;"/>
+                </a>
+              </li>
+              <li class="insta">
+                <a href="https://www.instagram.com/stocksoli/"><img src="static/Insta Icon.svg" alt="Instagram" title="LinkedIn" style="height:32px;"/>
+                <a/>
+              </li>
+              <li class="preply_icon">
+                <a href="https://preply.com/en/?pref=MTY3MDY3ODQ=&id=1735377802.886614"><img src="static/Preply logo.svg" alt="Preply" title="Preply" style="height:32px;"/>
+                <a/>
+              </li>
+              <li class="github_icon">
+                <a href="https://github.com/Spoyl"><img src="static/Github logo.svg" alt="Github" title="Github" style="height:32px;"/>
+                <a/>
+              </li>
+              <li class="linkedin_icon">
+                <a href="https://www.linkedin.com/in/oliver-stocks/"><img src="static/LinkedIn Icon.svg" alt="LinkedIn" title="LinkedIn" style="height:32px;"/>
+                <a/>
+              </li>
+            </ul>
+          </center>
+        </div>
+        <div class="right_side">
+        <h1>
+          About
+        </h1>
+        <p class="bodytext">
+          Welcome to my website. This started out as a place to
+           share travel stories, but now it's 
+           my multi-purpose corner of the internet. For work related 
+          queries, connect with me on LinkedIn. For travel updates,
+           check out my Instagram. For English lessons, check out my Preply.
+           For anything else, drop me an email.<br/><br/>
+          I'm always interested in new projects so if you'd like to collaborate 
+          on something, feel free to get in touch!
+        </p>
+        <center>
+          <img src="static/sig.svg" alt="Theme" height=30px/>
+        </center>
+      </div>
+      </div>
+      <hr class="home-rule" />
+      </header>
+      <section id="services">
+        <h1 id="serviceh1">
+         Projects
+        </h1>
+        <div id="package_display">
+          <div class="package" id="roamer">
+            <center>
+              <img src="static/vision.svg" alt="Vision" height=40px/>
+              <p>
+                <h7>
+                  Waypoint Detection
+                </h7>
+              </p>
+              <p>
+                Detection of ground waypoints from a drone. I wrote a custom python script to process the video feed and identify waypoints, read the letter and transmit the data to a ground station.
+              </p>
+            </center>
+          </div>
+          <div class="package" id="explorer">
+            <center>
+              <img src="static/bone.svg" alt="Vision" height=28px/>
+              <p>
+                <h7>
+                  CT Data Reconstruction
+                </h7>
+              </p>
+              <p>
+                Reconstruction of an articulated medieval femur from CT scans and subsequent FEA analysis
+              </p>
+            </center>
+          </div>
+          <div class="package" id="explorer">
+            <center>
+              <img src="static/ampscan.svg" alt="Vision" height=40px/>
+              <p>
+                <h7>
+                  Ampscan Package
+                </h7>
+              </p>
+              <p>
+                A python package for the analysis of residual limb scans. I produced the python package and docs for the project, and some wip stuff... 
+              </p>
+            </center>
+          </div>
+        </div>
+      </section>
+      <section>
+      <article id="blog-search">
+        <hr/>
+        <div class="category">
+        <h1 id="blog">
+          Blog
+          </h1>
+          <h2>
+            <img src="static/location.svg" style="height:20px;"/>
+            Travel 2024
+          </h2>
+          <div class="scroll-bar">
+            <button class="prev">
+            <svg width="52" height="19" viewBox="-4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+              <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              </svg>                  
+            </button>
+            <div class="blog-window">
+              {% for name in travel24_nav %}
+              <div>
+                <a class="blog-preview" id="noimg" href={{name[0]}}>
+                    <span>{{name[0]|striptags|replace(".html", "")|title|replace("-", " ") }}</span>
+                    <p>
+                      {{name[1]}}
+                    </p>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="next">
+              <svg  width="52" height="19" viewBox="4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                </svg>                  
+              </button>
+          </div>
+        </div>
+        <div class="category">
+          <h2>
+            <img src="static/location.svg" style="height:20px;"/>
+            Travel 2023
+          </h2>
+          <div class="scroll-bar">
+            <button class="prev">
+            <svg width="52" height="19" viewBox="-4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+              <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              </svg>                  
+            </button>
+            <div class="blog-window">
+              {% for name in travel23_nav %}
+              <div>
+                <a class="blog-preview" id="noimg" href={{name[0]}}>
+                    <span>{{name[0]|striptags|replace(".html", "")|title|replace("-", " ") }}</span>
+                    <p>
+                      {{name[1]}}
+                    </p>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="next">
+              <svg  width="52" height="19" viewBox="4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                </svg>                  
+              </button>
+          </div>
+        </div>
+        <div class="category">
+          <h2>
+            <img src="static/pencil.svg" style="height:20px;"/>
+            Misc
+          </h2>
+          <div class="scroll-bar">
+            <button class="prev">
+            <svg width="52" height="19" viewBox="-4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+              <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              <g>
+              <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+              </g>
+              </svg>                  
+            </button>
+            <div class="blog-window">
+              {% for name in misc_nav %}
+              <div>
+                <a class="blog-preview" id="noimg" href={{name[0]}}>
+                    <span>{{name[0]|striptags|replace(".html", "")|title|replace("-", " ") }}</span>
+                    <p>
+                      {{name[1]}}
+                    </p>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+            <button class="next">
+              <svg  width="52" height="19" viewBox="4 -2 52 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <ellipse cx="10" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="34" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                <g>
+                <ellipse cx="22" cy="4" rx="4" ry="4" fill="#D9D9D9"/>
+                </g>
+                </svg>                  
+              </button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+    {% endblock %}
